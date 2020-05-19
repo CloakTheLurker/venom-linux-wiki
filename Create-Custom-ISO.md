@@ -1,5 +1,6 @@
 # Introduction
 You can create your own custom Venom Linux ISO with your customization, then this custom ISO can be use to install into other machine.
+`./scripts/build.sh` script is used in this process.
 
 ## Prepare
 
