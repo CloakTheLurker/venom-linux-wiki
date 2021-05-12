@@ -46,7 +46,7 @@ Chroot into the extracted venom image.
 Configure the system's hostname, timezone, clock, font, keymap and daemon:
 
 ```
-# vim /etc/runit/runit.conf
+# vim /etc/rc.conf
 ```
 
 Configure /etc/fstab:
