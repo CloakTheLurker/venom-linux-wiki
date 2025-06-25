@@ -62,10 +62,12 @@ Venom Linux does not have a graphical installar. To start the installer you open
 ### Installing Venom Linux
 
 When the installer starts you are greeted by a curses menu, the following section will detail each screen of the installer.
+
 ![Installer Menu](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_21_56_16.png)
 
 #### Keyboard
 Select the keymap for your keyboard, for example us for US QWERTY keyboard:
+
 ![Set Keyboard](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/06%20-%20Set%20Keyboard.png) 
 
 #### Partitioning
@@ -73,14 +75,17 @@ When Partition Disk is selected from the Installer Menu you are greeted with a h
 For EFI paritions a GPT GPT partition table is required. 
 Also a FAT32 partition with at least 100 MB - 200 MB is a safe choice.
 This partition should be set as type EFI.
+
 ![Partition Tips](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/08%20-%20Partition%20Tips.png)
 
 This guide will walk you through setting up partitions for both BIOS as well as for UEFI systems.
 
 Select either cfdisk or fdisk to partition your disk. cfdisk is a bit more user-friendly compared to fdisk.
+
 ![Run Cfdisk](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/09%20-%20Run%20cfdisk.png)
 
 Select the disk you want to partition for your Venom Linux install.
+
 ![Choose Disk](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/10%20-%20Choose%20Disk.png)
 
 Select a Partition Label type with regards to your system as was hinted in the Partition Tip earlier.
@@ -88,10 +93,12 @@ Select a Partition Label type with regards to your system as was hinted in the P
 ##### For BIOS systems 
 
 Select DOS label type
+
 ![Select Label](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/11%20-%20Select%20Label%20Type.png)
 
 Create your partitions as you see fit.
 In this example we are creating a root partiton, a home partition and a SWAP partition.
+
 ![Change Partition Type](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_00_33.png)
 
 ![Partitions](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_01_17.png)
@@ -99,17 +106,21 @@ In this example we are creating a root partiton, a home partition and a SWAP par
 ##### For UEFI systems
 
 Select GPT label type
+
 ![GPT Label](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_13_06_2020_20_02_40.png)
 
 Create your partitions as you see fit but remember to create a dedicated partition of at least 100 MB for EFI.
+
 ![GPT Partitions](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_13_06_2020_20_03_44.png)
 
 Change the partition type of the 100 ~ 200 MB partition to EFI System.
+
 ![EFI System](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_13_06_2020_20_03_58.png)
 
 ##### For both UEFI as well as BIOS**
 
-Create a SWAP partition; to create a SWAP partition in cfdisk you need to alter the partition type
+Create a SWAP partition; to create a SWAP partition in cfdisk you need to alter the partition type.
+
 ![Select Partition Type SWAP](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/14%20-%20Select%20Partition%20Type%20for%20swap.png)
 
 ![GPT Partitions Overview](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_13_06_2020_20_05_06.png)
@@ -120,65 +131,82 @@ Create a SWAP partition; to create a SWAP partition in cfdisk you need to alter 
 
 If you have set-up your partitions for UEFI system (GPT partition table and 100 ~ 200 MB EFI partition) the Venom Installer will detect this and will prompt you to choose the EFI partition.
 If you have set up your partitions for a BIOS system (MBR) then the installer will obviously skip this step.
+
 ![EFI Partition](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_13_06_2020_20_05_30.png)
 
 When you have written the changes to disk, it's time to choose the partition you want Venom to live in.
+
 ![Choose Disk](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_02_53.png)
 
 Format the partition.
+
 ![Format](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_03_11.png)
 
 Select the filesystem of this partition:
+
 ![Select Filesystem](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_03_30.png)
 
 The Venom Installer will detect your SWAP partition if you gave it the correct type during partitioning.
+
 ![SWAP Found](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_04_03.png)
 
 Select the SWAP partitions:
+
 ![Choose SWAP Partition](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_04_16.png)
 
 The installer will ask if you would like to setup another partition.
 In our example we created a */home* partition, this is the time and place to set it up.
+
 ![Setup Another Partition](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_05_04.png)
 
 Choose the partition you would like to use.
+
 ![Choose Partition](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_05_26.png)
 
-Type /honme
+Type /home
+
 ![Mount Point](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_06_09.png)
 
 Select the file system for this partition,
+
 ![File System Select](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_06_18.png)
 
 We are presented with the option to setup yet another partition. In this case we will choose "No" as we didn't created any other partition besides /home. If you created a dedicated partition for e.g. /var this would be the place to set that up.
+
 ![Setup Another Partition](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_06_44.png)
 
 **Note: If you select "Yes" and there is no other partition to setup the installer will skip and move forward to the next step**
 
 After done setting up partitions we get a small summery of the partitons we just setup.
 The root partition is not included in this small overview because root is basically needed to have Venom installed.
+
 ![Partition Overview](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_06_57.png)
 
 #### Set Timezone
 After this is done you can choose Set Timezone from the Venom Linux Installer menu.
 Select your timezone accordingly.
+
 ![Set Timezone](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/21%20-%20Select%20Timezone.png)
 
 #### Hostname
 Set Hostname and type the hostname for your machine.
+
 ![Host Name](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/23%20-%20Enter%20Hostname.png)
 
 #### Set locale
 ![Set Locale](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_08_12.png)
 
 For example "en_US" choose yours accordingly.
+
 ![Locale](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_08_46.png)
 
 Select your time.
+
 ![Select Time](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_08_58.png)
 
 **Set-Up a User Account**
 Set User Account by entering a login name and a password, you will be prompted to retype the password.
+
 ![Set User Account](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/24%20-%20Set%20User%20Account.png)
 
 ![Login Name](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/25%20-%20Enter%20Login%20Name.png)
@@ -189,20 +217,24 @@ Set User Account by entering a login name and a password, you will be prompted t
 
 #### Set Password for Root
 Set Root Password is similar to setting up the user with the difference being that no login name is needed.
+
 ![Root Password](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/29%20-%20Enter%20Root%20Password.png)
 
 ![Confirm Root Password](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/30%20-%20Confirm%20Root%20Password.png)
 
 #### Set-Up Grub
-Next up is setting up grub; 
+Next up is setting up grub:
+
 ![Bootloader](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/31%20-%20Bootloader.png)
 
 Unless you really know what you are doing, it is highly recommended to install the grub bootloader.
 So select yes in this section.
+
 ![Install Grub](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/32%20-%20Install%20Bootloader.png)
 
 The installer will ask where you want to install the bootloader.
 Select the device your Venom Linux installer will live in; for example it's /dev/sda (notice that there is no number after sda, which is correct).
+
 ![Choose Disk](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/33%20-%20Choose%20Disk%20for%20Bootloader.png)
 
 #### View Settings
@@ -210,6 +242,7 @@ Last but not least you will get a chance to review your selected settings before
 It's important to pay attention here and check if everything has been setup correctly.
 Note that if you are **not** installing on an EFI system the EFI section will be marked SKIP.
 Obviously if you are installing on an EFI system this will present a value; e.g. /dev/sda1.
+
 ![View Settings](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/34%20-%20View%20Saved%20Settings.png)
 
 ![View Settings EFI](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_13_06_2020_20_08_51.png)
@@ -217,13 +250,16 @@ Obviously if you are installing on an EFI system this will present a value; e.g.
 ![Saved Settings](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/VirtualBox_Test%20Machine_10_06_2020_22_11_46.png)
 
 #### Install Venom
-After you have verified that the settings you have saved are correct you can let the installer do its work;
+After you have verified that the settings you have saved are correct you can let the installer do its work:
+
 ![install](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/36%20-%20Install.png)
 
 The installer will ask if you really want to continue with the installation
+
 ![Confirm Install](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/37%20-%20Continue%20with%20Installation.png)
 
 Once Yes is selected the installer will start installing Venom Linux on your system with the settings as you have selected and reviewed.
+
 ![installation Progress](https://github.com/CloakTheLurker/venom-linux-wiki/blob/master/images/38%20-%20Installation%20in%20Process.png)
 
 You will get a notification when the installation is complete.
